@@ -1,0 +1,17 @@
+{
+  "name": "tree",
+  "version": "1.0.0",
+  "description": "For docker",
+  "main": "index.js",
+  "scripts": {
+	  "dev": "docker-compose up -d",
+	  "stop": "docker-compose down",
+	  "viewIP": "docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' web-node-backend",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tree"
+  ],
+  "author": "yiir",
+  "license": "ISC"
+}
