@@ -8,16 +8,16 @@ services:
       - 9080:80
       - 9443:443
     volumes:
-      - D:/docker/tree/frontend:/home/webserver
-      - D:/docker/tree/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - D:/docker/tree/nginx/conf.d:/etc/nginx/conf.d
+      - D:/docker/docker_tree/frontend:/home/webserver
+      - D:/docker/docker_tree/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - D:/docker/docker_tree/nginx/conf.d:/etc/nginx/conf.d
 
   db_mysql:
     container_name: db-mysql
     image: mysql:8.0.15
     command: --character-set-server=utf8 --collation-server=utf8_unicode_ci --default-authentication-plugin=mysql_native_password
     volumes:
-      - D:/docker/tree/mysql/db:/var/lib/mysql
+      - D:/docker/docker_tree/mysql/db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
     ports:
@@ -44,9 +44,9 @@ services:
       args:
         build_no: 1
     ports:
-      - 3000:3000
+      - 3500:3500
 #    volumes:
-#      - D:/docker/tree/backend:/home/app
+#      - D:/docker/docker_tree/backend:/home/app
 #    env_file: .env
 #    environment:
 #      - APP=bin/www
